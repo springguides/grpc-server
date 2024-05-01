@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "com.learn.grpc";
+option java_multiple_files = true;
+
+message BookRequest{
+  string book_id = 1;
+}
+
+message BookResponse{
+  string book_id = 1;
+  string name = 2;
+}
+
+service BookService {
+  rpc  getBook(BookRequest) returns (BookResponse) {};
+}
